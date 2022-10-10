@@ -2,44 +2,41 @@ package by.it_academy.lesson6;
 
 public class PaymentCard {
     private double balance;
-    double x = 500;
 
     PaymentCard(double balance) {
-        this.balance = x;
+        this.balance = balance;
     }
 
     @Override
     public String toString() {
-        return "The card has a balance of" + x;
+        return "The card has a balance of " + balance;
     }
 
     public void eatAffordably() {
-        double a = x - 2.6;
-        if (a > 0)
-            System.out.println(a);
+        if (balance >= 2.6) {
+            balance -= 2.6;
+        }
     }
 
     public void eatHeartily() {
-        double b = x - 4.6;
-        if (b > 0)
-            System.out.println(b);
+        if (balance >= 4.6) {
+            balance -= 4.6;
+        }
     }
 
-    public void addMoney() {
-        double salary = 1000;
-        double sumBalance = x + salary;
-        if (salary > 0)
-            System.out.println(sumBalance);
-        if (salary < 0)
-            System.out.println(x);
+    public void addMoney(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
 
     }
 
     public static void main(String[] args) {
-        final PaymentCard paymentCard = new PaymentCard(args.length);
+        PaymentCard paymentCard = new PaymentCard(100);
         paymentCard.eatAffordably();
         paymentCard.eatHeartily();
-        paymentCard.addMoney();
+        paymentCard.addMoney(20);
+        System.out.println(paymentCard);
     }
 }
 

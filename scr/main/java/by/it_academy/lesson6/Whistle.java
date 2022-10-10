@@ -7,13 +7,13 @@ public class Whistle {
         this.sound = sound;
     }
 
-    public void testOfSound() {
+    public void sound() {
         System.out.println(sound);
     }
 
     public static void main(String[] args) {
         final Whistle whistle = new Whistle("sssssss");
-        whistle.testOfSound();
+        whistle.sound();
     }
 }
 
