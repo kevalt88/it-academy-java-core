@@ -1,7 +1,7 @@
 package by.it_academy.lesson8.Task1;
 
 public abstract class Animal {
-    private String name;
+    private final String name;
 
     Animal(String name) {
         this.name = name;

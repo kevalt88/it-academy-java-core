@@ -6,7 +6,7 @@ class Dog extends Animal implements NoiseCapable {
     }
 
     public Dog() {
-        super("Barbos");
+        super("Dog");
     }
     public void bark(){
         System.out.println(name() + " barks");

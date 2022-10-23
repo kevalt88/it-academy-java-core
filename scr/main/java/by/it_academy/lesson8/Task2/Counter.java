@@ -11,7 +11,7 @@ public class Counter {
         this(0);
     }
 
-    public int Value() {
+    public int value() {
         return value;
     }
 
