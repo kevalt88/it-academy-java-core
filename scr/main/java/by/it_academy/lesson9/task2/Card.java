@@ -1,8 +1,9 @@
-package by.it_academy.lesson9.Task2;
+package by.it_academy.lesson9.task2;
 
 public class Card {
+
     private final Suit suit;
-    private int cost;
+    private final int cost;
 
     public Card(Suit suit, int cost) {
         this.suit = suit;
@@ -13,11 +14,12 @@ public class Card {
     public String toString() {
         return suit.toString() + " " + value();
     }
-    public String value(){
-        if (cost < 11){
+
+    public String value() {
+        if (cost < 11) {
             return String.valueOf(cost);
         }
-        switch (cost){
+        switch (cost) {
             case 11:
                 return "J";
             case 12:
@@ -26,8 +28,10 @@ public class Card {
                 return "K";
             case 14:
                 return "A";
+            default:
+                throw new RuntimeException("Card cost is invalid");
         }
-        return "";
     }
+
 }
 
