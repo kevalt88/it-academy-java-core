@@ -29,11 +29,11 @@ public class Main {
     }
 
     private static List<Integer> cubes(List<Integer> numbers) {
-        List<Integer> list2 = new ArrayList<>();
+        List<Integer> newList = new ArrayList<>();
         for (int i = 0; i < numbers.size(); i++) {
-            list2.add(numbers.get(i) * numbers.get(i) * numbers.get(i));
+            newList.add(numbers.get(i) * numbers.get(i) * numbers.get(i));
         }
-        return list2;
+        return newList;
     }
 
     private static void writeToFile(List<Integer> numbers) {

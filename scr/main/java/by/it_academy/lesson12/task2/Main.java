@@ -1,24 +1,24 @@
 package by.it_academy.lesson12.task2;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("File:");
-        String file = scanner.nextLine();
         System.out.println("Enter team name:");
         String team = scanner.nextLine();
 
-        try (Reader reader = new BufferedReader(new FileReader(file))) {
-            ArrayList<Game> games = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("scr/main/resources/data.csv").getAbsolutePath()))) {
+            Collection<Game> games = new ArrayList<>();
             String line;
-            while ((line = ((BufferedReader) reader).readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 games.add(new Game(line));
             }
             int wins = 0;
