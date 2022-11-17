@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class AverageSensor implements Sensor {
-    private Collection<Sensor> sensors = new ArrayList<>();
+    private final Collection<Sensor> sensors = new ArrayList<>();
 
     public void addSensor(Sensor toAdd) {
         sensors.add(toAdd);
@@ -42,9 +42,10 @@ public class AverageSensor implements Sensor {
         int sum = 0;
         int activeSensors = 0;
         for (Sensor sensor : sensors) {
-            if (sensor.isOn())
+            if (sensor.isOn()) {
                 sum += sensor.read();
-            activeSensors++;
+                activeSensors++;
+            }
         }
         if (activeSensors == 0) {
             throw new IllegalStateException();
